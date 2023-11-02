@@ -7,8 +7,12 @@
 # BlueJ files
 *.ctxt
 
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
+.idea
+.gradle
+build
 
 # Package Files #
 *.jar
@@ -23,3 +27,10 @@
 hs_err_pid*
 replay_pid*
 
+
+### Gradle ###
+.gradle
+gradle
+gradlew
+gradlew.bat
+settings.gradle
