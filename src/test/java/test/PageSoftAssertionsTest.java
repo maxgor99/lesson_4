@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -23,8 +24,9 @@ public class PageSoftAssertionsTest {
     void SuccessTest() {
         open("/selenide/selenide");
         $("#wiki-tab").click();
-        $$("div.markdown-body li").get(8).shouldHave(text("Soft assertion"));
-        $$("div.markdown-body li").get(8).$("a").click();
+        $$("#wiki-pages-box li" ).last().$("button").click();
+        $("#wiki-pages-box").shouldHave(text("SoftAssertions"));
+        $("#wiki-pages-box").$(byText("SoftAssertions")).click();
         $("#user-content-3-using-junit5-extend-test-class").sibling(0).shouldHave(text(
                 "@ExtendWith({SoftAssertsExtension.class})\n" +
                         "class Tests {\n" +
